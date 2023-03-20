@@ -1,20 +1,15 @@
 import './Expense.scss'
+import ExpenseDate from './ExpenseDate'
 
-const Expense = () => {
+const Expense = (props) => {
    return (
       <div className='expense'>
          <div className='section-container'>
-            <h1>Expenses Project</h1>
             <div className="expenses-item">
-               <div className="date">
-                  <span className='month'>August</span>
-                  <span className='year'>2020</span>
-                  <span className='day'>14</span>
-               </div>
-
+            <ExpenseDate date={props.date}/>
                <div className="title">
-                  <h1> Birthday Party</h1>
-                  <h1>P 2000.00</h1>
+                  <h1>{props.title}</h1>
+                  <h1>{props.amount}</h1>
                </div>
             </div>
          </div>
