@@ -13,6 +13,12 @@ export default {
             title: 'Duty Free',
             date: new Date(2023,2,19),
             amount: 1500
+         },
+         {
+            id: 3,
+            title: 'Dinner',
+            date: new Date(2023,1,16),
+            amount: 2400
          }
       ]
    }

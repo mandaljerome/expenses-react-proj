@@ -1,6 +1,7 @@
 import './App.scss'
-import Header from './components/Header'
-import Expense from './components/Expense'
+import Header from './Header'
+import Expense from './components/Expenses/Expense'
+import NewExpense from './components/NewExpenses/NewExpense'
 import data from './data.jsx'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
    return (
       <div className='App'>
          <Header />
+         <NewExpense />
          {expense}
       </div>
    )
