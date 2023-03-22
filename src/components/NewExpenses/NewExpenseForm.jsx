@@ -1,9 +1,16 @@
 import './NewExpenseForm.scss'
 
 const NewExpenseForm = () => {
+
+    const formSubmit = (event) => {
+      event.preventDefault()
+      console.log('I was clicked!')
+    }
+
+
     return (
         <div className='new-expense-form'>
-            <form action='submit'>
+            <form action='submit' onSubmit={formSubmit}>
                 <div className='inputs'>
                     <div className='form-control'>
                         <label>Title</label>
