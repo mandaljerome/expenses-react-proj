@@ -1,99 +1,78 @@
 @import '../../assets/colors.scss';
 
 .new-expense-form {
-   background: $color3;
-   padding: 40px;
-   margin-top: 30px;
-   border-radius: 5px;
-   color: white;
-   font-family: inherit;
+    background: $color3;
+    padding: 40px;
+    margin-top: 30px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: inherit;
 
-   form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-      .inputs {
-         display: flex;
-         flex-wrap: wrap;
-         justify-content: space-between;
-         width: 100%;
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-         .form-control {
+        .inputs {
             display: flex;
-            align-items: center;
-            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            width: 100%;
 
-            label {
-               margin-right: 10px;
-               font-weight: 600;
+            .form-control {
+                display: flex;
+                align-items: center;
+                margin-bottom: 30px;
+                
+                label {
+                    margin-right: 10px;
+                    font-weight: 600;
+                }
+
+                input {
+                    width: 220px;
+                    height: 35px;
+                    padding: 10px;
+                }
             }
-
-            input {
-               width: 250px;
-               height: 35px;
-               padding: 10px;
-            }
-         }
-      }
-      button {
-         width: 300px;
-         height: 50px;
-         justify-self: center;
-         font-family: inherit;
-         font-weight: 700;
-         background-color: $color5;
-         color: white;
-         border: none;
-         border-radius: 5px;
-         font-size: 1.1rem;
-         cursor: pointer;
-         
-         
-       }
-       button:active {
-        transform: scale(98%);
-         
-      }
-
-    
-   }
+        }
+        button {
+            width: 300px;
+            height: 50px;
+            justify-self: center;
+            font-family: inherit;
+            font-weight: 700;
+            background-color: $color5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        button:active {
+            transform: scale(98%);
+        }
+    }
 }
 
-
-@media (max-width: 1100px) {
+@media (max-width: 800px) {
     .new-expense-form {
-       
-     
         form {
-        
-         
-           .inputs {
-             justify-content: space-evenly;
-     
-              .form-control {
+            .inputs {
+                justify-content: flex-end;
                 
-     
-                 label {
-                 
-                 }
-     
-                 input {
+
+                .form-control {
+                    width: 100%;
                     
-                 }
-              }
-           }
-           button {
-              
-              
-              
+
+                    input {
+                        width: 100%;
+                        
+                    }
+                }
             }
-            button:active {
-             
-           }
-     
-         
         }
-     }
+    }
 }
