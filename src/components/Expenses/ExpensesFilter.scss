@@ -1,0 +1,48 @@
+@import '../../assets/colors.scss';
+
+.expenses-filter {
+    .section-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 20px;
+
+        h3 {
+            font-weight: 900;
+            margin: 10px 10px 10px 0;
+            line-height: 1;
+        }
+
+        select {
+            width: 150px;
+            text-align: center;
+            height: 40px;
+            border-radius: 5px;
+            font-family: inherit;
+            font-weight: 800;
+
+            option {
+                font-family: inherit;
+                
+            }
+
+
+            option:checked {
+                background-color: $color3; /* Set selected color */
+                color: #fff; /* Set selected text color */
+            }     
+            
+        }
+
+        select:active {
+            outline: none;
+        }
+
+        select:focus{
+            outline: none;
+        }
+        
+    }
+}
+
+
