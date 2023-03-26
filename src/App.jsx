@@ -1,8 +1,7 @@
 import './App.scss'
 import Header from './Header'
-import ExpenseList from './components/Expenses/ExpenseList'
+import Expense from './components/Expenses/Expense'
 import NewExpense from './components/NewExpenses/NewExpense'
-import ExpensesFilter from './components/Expenses/ExpensesFilter'
 import { useState } from 'react'
 
 // import data from './data.jsx'
@@ -29,42 +28,18 @@ function App() {
         },
     ])
 
-    const [filterYear, setFilterYear] = useState('all')
-
-    const filteredData =
-        filterYear == 'all'
-            ? datas.map((data) => data)
-            : datas.filter((data) => data.date.getFullYear() == filterYear)
-
- 
-
-    const expense = filteredData.map((data) => {
-        return (
-            <ExpenseList
-                key={data.id}
-                title={data.title}
-                date={data.date}
-                amount={data.amount}
-            />
-        )
-    })
-
     const getDataHandler = (data) => {
         setDatas((prev) => {
             return [data, ...prev]
         })
     }
-
-    const selectedYear = (data) => {
-        setFilterYear(data)
-    }
+    
 
     return (
         <div className='App'>
             <Header />
             <NewExpense onGetData={getDataHandler} />
-            <ExpensesFilter onSelectedOption={selectedYear} />
-            {filteredData.length == 0 ? <h1>No data found</h1> : expense}
+            <Expense data={datas}/>
         </div>
     )
 }
