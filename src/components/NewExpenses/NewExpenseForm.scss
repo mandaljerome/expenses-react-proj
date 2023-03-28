@@ -1,0 +1,94 @@
+@import '../../assets/colors.scss';
+
+.new-expense-form {
+    background: $color3;
+    padding: 40px;
+    margin-top: 30px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: inherit;
+    
+    .new-form {
+        text-align: center;
+
+        .new-form-btn {
+            width: 300px;
+            height: 50px;
+            background-color: $color5;
+            border-radius: 5px;
+            border: none;
+            font-family: inherit;
+            font-weight: 900;
+            font-size: 18px;
+            color: #fff;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .inputs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            width: 100%;
+
+            .form-control {
+                display: flex;
+                align-items: center;
+                margin-bottom: 30px;
+                
+                label {
+                    margin-right: 10px;
+                    font-weight: 600;
+                }
+
+                input {
+                    width: 220px;
+                    height: 35px;
+                    padding: 10px;
+                }
+            }
+        }
+        button {
+            width: 300px;
+            height: 50px;
+            justify-self: center;
+            font-family: inherit;
+            font-weight: 700;
+            background-color: $color5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        button:active {
+            transform: scale(98%);
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .new-expense-form {
+        form {
+            .inputs {
+                justify-content: flex-end;
+                
+
+                .form-control {
+                    width: 100%;
+                    
+
+                    input {
+                        width: 100%;
+                        
+                    }
+                }
+            }
+        }
+    }
+}
