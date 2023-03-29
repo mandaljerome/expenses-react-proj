@@ -1,7 +1,7 @@
 import './GraphBar.scss'
 
 const GraphBar = (props) => {
-    const innerBarHeight = Math.round((props.value / props.maxValue) * 100)
+    const innerBarHeight = props.value > 1 ? Math.round((props.value / props.maxValue) * 100) : 0
     const barHeigt = innerBarHeight + '%'
     
 

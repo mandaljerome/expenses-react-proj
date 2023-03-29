@@ -27,7 +27,7 @@ const Expense = (props) => {
 
     useEffect(() => {
         props.onGetData(filteredData)
-    },[filterYear])
+    },[filterYear,props.data])
     
 
     const selectedYear = (data) => {

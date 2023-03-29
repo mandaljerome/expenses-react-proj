@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react'
 import './Graph.scss'
 import GraphBar from './GraphBar'
+
 
 const Graph = (props) => {
     const expensesValue = [
@@ -16,27 +18,20 @@ const Graph = (props) => {
         { month: 'Nov', value: 0 },
         { month: 'Dec', value: 0 },
     ]
+    
+ 
 
-    props.dataFilter.forEach((item,idx) => {
+    props.dataFilter.forEach((item, idx) => {
         const month = item.date.getMonth()
-        
-        expensesValue[month].value += item.amount
-        
-    })
 
+        expensesValue[month].value += item.amount
+    })
 
     const filterValue = expensesValue.map((data) => {
         return data.value
     })
 
     const maxValue = Math.max(...filterValue)
-    
-    // props.dataFilter.forEach((item,idx) => {
-    //   const data = item.date.getMonth()
-      
-    // })
-    
-    
 
     return (
         <div className='graph section-container'>
