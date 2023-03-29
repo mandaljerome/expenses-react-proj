@@ -1,18 +1,18 @@
 import './Expense.scss'
 import ExpensesFilter from './ExpensesFilter'
 import ExpenseList from './ExpenseList'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Expense = (props) => {
     const [filterYear, setFilterYear] = useState('all')
-
+    
     const datas = props.data
 
     const filteredData =
         filterYear == 'all'
             ? datas.map((data) => data)
             : datas.filter((data) => data.date.getFullYear() == filterYear)
-
+    
     const expense = filteredData.map((data) => {
         return (
             <ExpenseList
@@ -23,6 +23,12 @@ const Expense = (props) => {
             />
         )
     })
+
+
+    useEffect(() => {
+        props.onGetData(filteredData)
+    },[filterYear])
+    
 
     const selectedYear = (data) => {
         setFilterYear(data)

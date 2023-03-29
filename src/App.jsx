@@ -2,6 +2,7 @@ import './App.scss'
 import Header from './Header'
 import Expense from './components/Expenses/Expense'
 import NewExpense from './components/NewExpenses/NewExpense'
+import Graph from './components/Graph/Graph'
 import { useState } from 'react'
 
 // import data from './data.jsx'
@@ -28,18 +29,24 @@ function App() {
         },
     ])
 
+    const [filteredData, setFilteredData] = useState([])
+
     const getDataHandler = (data) => {
         setDatas((prev) => {
             return [data, ...prev]
         })
     }
     
+    // const expenseGetData = (data) => {
+    //   setFilteredData(data)
+    // }
 
     return (
         <div className='App'>
             <Header />
             <NewExpense onGetData={getDataHandler} />
-            <Expense data={datas}/>
+            <Graph dataFilter={filteredData} />
+            <Expense data={datas} onGetData={setFilteredData} />
         </div>
     )
 }

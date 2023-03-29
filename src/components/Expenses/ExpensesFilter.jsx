@@ -4,13 +4,13 @@ const ExpensesFilter = (props) => {
     const selectChangeHandler = (e) => {
         props.onSelectedOption(e.target.value)
     }
-
+    
     return (
         <div className='expenses-filter'>
             <div className='section-container'>
                 <h3>Filter by year</h3>
                 <select onChange={selectChangeHandler}>
-                    <option value='all'>Alll Year</option>
+                    <option value='all'>All Year</option>
                     <option value='2019'>2019</option>
                     <option value='2020'>2020</option>
                     <option value='2021'>2021</option>
